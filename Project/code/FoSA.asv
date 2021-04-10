@@ -1,0 +1,34 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% Visão Computacional %%%%%%%%%%%%%%%%%%%
+%%%%%%%% Projeto 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% Aluno: Paulo Henrique Muniz Ferreira %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Algoritmo FoSA
+% Descrição na seção 4 do artigo de ref.
+
+
+function ImagemRachaduras = FoSA(Imagem)
+
+% CUIDADO COM AS SEÇÕES DE TESTE
+% ---------Seção de testes---------
+% Figura do exemplo 3
+ConjuntoElementos = filtragemBaseadaAPC([]);
+exemplo1 = imread('imagens\exemplo1','png'); % Abre a imagem
+Imagem = rgb2gray(exemplo1);
+r = 16;
+% ---------------------------------
+
+
+% 1º passo - Criação de Elementos de Rachadura
+
+[ConjuntoElementos] = SecoesToElementos(Imagem);
+
+% 2º passo - Filtragem baseada no APC
+
+[novoConjunto] = filtragemBaseadaAPC(ConjuntoElementos);
+
+% 3º passo - Aquisição de Rastro da Rachadura
+
+[NovoConjunto] = AquisicaoRastroRachadura(ConjuntoElementos, Imagem, r);
+

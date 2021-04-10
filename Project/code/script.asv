@@ -1,0 +1,18 @@
+
+% Toy problem
+% Exemplo da Figura 2
+%I = [1 2 5 6; 7 4 1 6; 3 5 1 3; 9 7 2 1];
+%S = [2 3];
+
+%[P_e1, P_e2, PH] = FoS(I, S);
+
+% Exemplo da figura 3 do artigo de referência
+exemplo1 = imread('imagens\exemplo1','png'); % Abre a imagem
+cinza_ex1 = rgb2gray(exemplo1);
+
+S = [117 113];
+
+[P_e1, P_e2, PH] = FoS(cinza_ex1, S);
+
+subplot(1,2,1), subimage(cinza)
+subplot(1,2,2), subimage()

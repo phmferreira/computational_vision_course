@@ -1,1 +1,1 @@
-# computational_vision_course
+# Computational Vision Course
